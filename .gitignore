@@ -18,9 +18,11 @@ env/
 *.swp
 
 # Data (runtime, not tracked)
-data/golden/
-data/models/
-data/logs/
+data/
+datasets/
+transistor/
+results/
+pre_trained/
 *.onnx
 *.engine
 *.trt
