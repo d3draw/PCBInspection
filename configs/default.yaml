@@ -15,6 +15,15 @@ inspection:
     rule_based: 0.7
     blob: 0.5
 
+camera:
+  exposure_us: 3000.0
+  gain: 0.0
+  pixel_format: Mono8
+  trigger_mode: false
+  trigger_source: Software
+  grab_timeout_ms: 5000
+  buffer_count: 16
+
 output:
   results_dir: data/logs
   save_images: false
