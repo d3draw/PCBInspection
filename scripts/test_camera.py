@@ -39,6 +39,11 @@ def parse_args() -> argparse.Namespace:
     p.add_argument("--live", action="store_true", help="Continuous live view")
     p.add_argument("--save", action="store_true", help="Save captured image to file")
     p.add_argument("--info", action="store_true", help="Print camera info and exit")
+    p.add_argument(
+        "--no-display",
+        action="store_true",
+        help="Skip cv2.imshow; for headless / SSH runs (single grab implies --save)",
+    )
     p.add_argument("--exposure", type=float, default=3000.0, help="Exposure time (us)")
     p.add_argument("--gain", type=float, default=0.0, help="Gain (dB)")
     p.add_argument("--pixel-format", default="Mono8", help="Pixel format (Mono8, BayerRG8, etc.)")
@@ -121,10 +126,12 @@ def test_single_grab(cam: CrevisCamera, args: argparse.Namespace) -> None:
     print("  Capture OK!")
     print_image_stats(img)
 
-    if args.save:
+    if args.save or args.no_display:
         save_image(img, "single")
 
-    # Display (resized for screen)
+    if args.no_display:
+        return
+
     display = _resize_for_display(img)
     cv2.imshow("Single Grab - Press any key to close", display)
     cv2.waitKey(0)
