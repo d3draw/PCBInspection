@@ -1,0 +1,22 @@
+{
+  "schema_version": "1",
+  "label": "cold_solder",
+  "decision": "accept",
+  "decided_by": "QA-홍길동",
+  "decided_at": "2026-05-04",
+  "reason": "광택 약하나 fillet 정상 형성. IPC-A-610 class 2 통과. 라벨러 가이드: 무광 정도가 이 수준이면 OK 판정.",
+  "source": {
+    "board": "OK01",
+    "component_designator": "R12",
+    "package": "0603",
+    "lighting": "low_ring",
+    "exposure_us": 1200,
+    "capture_run": "data/captures/doe_OK01/low_ring__20260504_141023"
+  },
+  "image": {
+    "file": "001.png",
+    "dtype": "uint8",
+    "shape": [256, 256]
+  },
+  "doc_version": "0.1"
+}

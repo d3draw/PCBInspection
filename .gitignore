@@ -17,9 +17,17 @@ env/
 .idea/
 *.swp
 
-# Data (runtime, not tracked)
-data/
+# Data (runtime, not tracked).
+# Use data/* (not data/) so re-includes for the QA-curated criteria assets
+# below actually take effect — git can't un-prune a fully-excluded directory.
+data/*
 datasets/
+# QA-curated criteria assets (borderline samples + schema) — see
+# docs/INSPECTION_CRITERIA.md §4. Schema, .gitkeeps and meta JSON are tracked;
+# captured images stay out via the *.png line below.
+!data/criteria/
+!data/criteria/**
+data/criteria/**/*.png
 transistor/
 results/
 pre_trained/

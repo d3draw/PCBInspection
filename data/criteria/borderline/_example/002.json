@@ -1,0 +1,22 @@
+{
+  "schema_version": "1",
+  "label": "cold_solder",
+  "decision": "reject",
+  "decided_by": "QA-홍길동",
+  "decided_at": "2026-05-04",
+  "reason": "결정 모양 표면 + fillet 미형성. 명백한 cold solder. 라벨러 가이드: 표면 결정 패턴이 보이면 NG.",
+  "source": {
+    "board": "NG03_cold_solder",
+    "component_designator": "R7",
+    "package": "0603",
+    "lighting": "low_ring",
+    "exposure_us": 1200,
+    "capture_run": "data/captures/doe_NG03_cold_solder/low_ring__20260504_142511"
+  },
+  "image": {
+    "file": "002.png",
+    "dtype": "uint8",
+    "shape": [256, 256]
+  },
+  "doc_version": "0.1"
+}
